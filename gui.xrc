@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<resource xmlns="http://www.wxwindows.org/wxxrc" version="2.3.0.1">
+	<object class="wxFrame" name="MyFrame1">
+		<style>wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL</style>
+		<size>500,418</size>
+		<title>Research Assistant</title>
+		<centered>1</centered>
+		<object class="wxStatusBar" name="the_statusbar">
+			<style>wxST_SIZEGRIP</style>
+			<fields>1</fields>
+		</object>
+		<object class="wxMenuBar" name="the_menubar">
+			<label>MyMenuBar</label>
+			<object class="wxMenu" name="file_menu">
+				<label>File</label>
+			</object>
+			<object class="wxMenu" name="edit_menu">
+				<label>Edit</label>
+			</object>
+			<object class="wxMenu" name="help_menu">
+				<label>Help</label>
+				<object class="wxMenuItem" name="m_menuItem1">
+					<label>About</label>
+					<help></help>
+				</object>
+			</object>
+		</object>
+		<object class="wxNotebook" name="the_notebook">
+			<object class="notebookpage">
+				<label>Articles</label>
+				<selected>1</selected>
+				<object class="wxPanel" name="articles_tab">
+					<style>wxTAB_TRAVERSAL</style>
+					<object class="wxBoxSizer">
+						<orient>wxVERTICAL</orient>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxLEFT|wxRIGHT|wxTOP</flag>
+							<border>10</border>
+							<object class="wxStaticText" name="keyword_static">
+								<font>
+									<family>default</family>
+									<style>normal</style>
+									<weight>bold</weight>
+									<underlined>0</underlined>
+								</font>
+								<label>Enter Keyword:</label>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxEXPAND|wxLEFT</flag>
+							<border>5</border>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="sizeritem">
+									<option>1</option>
+									<flag>wxLEFT|wxRIGHT|wxTOP</flag>
+									<border>5</border>
+									<object class="wxTextCtrl" name="keyword_text">
+										<value></value>
+										<maxlength>0</maxlength>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxLEFT|wxRIGHT|wxTOP</flag>
+									<border>5</border>
+									<object class="wxButton" name="go_button">
+										<label>Go!</label>
+										<default>0</default>
+									</object>
+								</object>
+								<object class="spacer">
+									<option>1</option>
+									<flag>wxEXPAND</flag>
+									<border>5</border>
+									<size>0,0</size>
+								</object>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxEXPAND</flag>
+							<border>5</border>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="sizeritem">
+									<option>1</option>
+									<flag>wxALL|wxEXPAND</flag>
+									<border>10</border>
+									<object class="wxStaticText" name="results_static">
+										<font>
+											<family>default</family>
+											<style>normal</style>
+											<weight>bold</weight>
+											<underlined>0</underlined>
+										</font>
+										<label>Results:</label>
+									</object>
+								</object>
+								<object class="spacer">
+									<option>3</option>
+									<flag>wxEXPAND</flag>
+									<border>5</border>
+									<size>0,0</size>
+								</object>
+								<object class="sizeritem">
+									<option>2</option>
+									<flag>wxLEFT|wxRIGHT|wxTOP</flag>
+									<border>10</border>
+									<object class="wxStaticText" name="m_staticText14">
+										<font>
+											<family>default</family>
+											<style>normal</style>
+											<weight>bold</weight>
+											<underlined>0</underlined>
+										</font>
+										<label>Add Note:</label>
+									</object>
+								</object>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>18</option>
+							<flag>wxBOTTOM|wxEXPAND|wxLEFT|wxRIGHT|wxTOP</flag>
+							<border>5</border>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="sizeritem">
+									<option>6</option>
+									<flag>wxBOTTOM|wxEXPAND|wxLEFT|wxRIGHT</flag>
+									<border>10</border>
+									<object class="wxTextCtrl" name="results_text">
+										<style>wxTE_MULTILINE</style>
+										<value></value>
+										<maxlength>0</maxlength>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>3</option>
+									<flag>wxBOTTOM|wxEXPAND|wxLEFT|wxRIGHT</flag>
+									<border>10</border>
+									<object class="wxTextCtrl" name="m_textCtrl14">
+										<style>wxTE_MULTILINE</style>
+										<value></value>
+										<maxlength>0</maxlength>
+									</object>
+								</object>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>3</option>
+							<flag>wxEXPAND|wxLEFT|wxRIGHT</flag>
+							<border>5</border>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="spacer">
+									<option>1</option>
+									<flag>wxEXPAND</flag>
+									<border>5</border>
+									<size>0,0</size>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxRIGHT</flag>
+									<border>9</border>
+									<object class="wxButton" name="m_button7">
+										<label>Add</label>
+										<default>0</default>
+									</object>
+								</object>
+							</object>
+						</object>
+						<object class="spacer">
+							<option>1</option>
+							<flag>wxEXPAND</flag>
+							<border>5</border>
+							<size>0,0</size>
+						</object>
+					</object>
+				</object>
+			</object>
+			<object class="notebookpage">
+				<label>Anwers</label>
+				<selected>0</selected>
+				<object class="wxPanel" name="articles_tab1">
+					<style>wxTAB_TRAVERSAL</style>
+					<object class="wxBoxSizer">
+						<orient>wxVERTICAL</orient>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxLEFT|wxRIGHT|wxTOP</flag>
+							<border>10</border>
+							<object class="wxStaticText" name="keyword_static1">
+								<font>
+									<family>default</family>
+									<style>normal</style>
+									<weight>bold</weight>
+									<underlined>0</underlined>
+								</font>
+								<label>Enter Keyword:</label>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxEXPAND|wxLEFT</flag>
+							<border>5</border>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="sizeritem">
+									<option>1</option>
+									<flag>wxLEFT|wxRIGHT|wxTOP</flag>
+									<border>5</border>
+									<object class="wxTextCtrl" name="keyword_text1">
+										<value></value>
+										<maxlength>0</maxlength>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxLEFT|wxRIGHT|wxTOP</flag>
+									<border>5</border>
+									<object class="wxButton" name="go_button1">
+										<label>Go!</label>
+										<default>0</default>
+									</object>
+								</object>
+								<object class="spacer">
+									<option>1</option>
+									<flag>wxEXPAND</flag>
+									<border>5</border>
+									<size>0,0</size>
+								</object>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxEXPAND</flag>
+							<border>5</border>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="sizeritem">
+									<option>1</option>
+									<flag>wxALL|wxEXPAND</flag>
+									<border>10</border>
+									<object class="wxStaticText" name="results_static1">
+										<font>
+											<family>default</family>
+											<style>normal</style>
+											<weight>bold</weight>
+											<underlined>0</underlined>
+										</font>
+										<label>Results:</label>
+									</object>
+								</object>
+								<object class="spacer">
+									<option>3</option>
+									<flag>wxEXPAND</flag>
+									<border>5</border>
+									<size>0,0</size>
+								</object>
+								<object class="sizeritem">
+									<option>2</option>
+									<flag>wxLEFT|wxRIGHT|wxTOP</flag>
+									<border>10</border>
+									<object class="wxStaticText" name="m_staticText141">
+										<font>
+											<family>default</family>
+											<style>normal</style>
+											<weight>bold</weight>
+											<underlined>0</underlined>
+										</font>
+										<label>Add Note:</label>
+									</object>
+								</object>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>18</option>
+							<flag>wxBOTTOM|wxEXPAND|wxLEFT|wxRIGHT|wxTOP</flag>
+							<border>5</border>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="sizeritem">
+									<option>6</option>
+									<flag>wxBOTTOM|wxEXPAND|wxLEFT|wxRIGHT</flag>
+									<border>10</border>
+									<object class="wxTextCtrl" name="results_text1">
+										<style>wxTE_MULTILINE</style>
+										<value></value>
+										<maxlength>0</maxlength>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>3</option>
+									<flag>wxBOTTOM|wxEXPAND|wxLEFT|wxRIGHT</flag>
+									<border>10</border>
+									<object class="wxTextCtrl" name="m_textCtrl141">
+										<style>wxTE_MULTILINE</style>
+										<value></value>
+										<maxlength>0</maxlength>
+									</object>
+								</object>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>3</option>
+							<flag>wxEXPAND|wxLEFT|wxRIGHT</flag>
+							<border>5</border>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="spacer">
+									<option>1</option>
+									<flag>wxEXPAND</flag>
+									<border>5</border>
+									<size>0,0</size>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxRIGHT</flag>
+									<border>9</border>
+									<object class="wxButton" name="m_button71">
+										<label>Add</label>
+										<default>0</default>
+									</object>
+								</object>
+							</object>
+						</object>
+						<object class="spacer">
+							<option>1</option>
+							<flag>wxEXPAND</flag>
+							<border>5</border>
+							<size>0,0</size>
+						</object>
+					</object>
+				</object>
+			</object>
+			<object class="notebookpage">
+				<label>Social Sites</label>
+				<selected>0</selected>
+				<object class="wxPanel" name="articles_tab2">
+					<style>wxTAB_TRAVERSAL</style>
+					<object class="wxBoxSizer">
+						<orient>wxVERTICAL</orient>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxLEFT|wxRIGHT|wxTOP</flag>
+							<border>10</border>
+							<object class="wxStaticText" name="keyword_static2">
+								<font>
+									<family>default</family>
+									<style>normal</style>
+									<weight>bold</weight>
+									<underlined>0</underlined>
+								</font>
+								<label>Enter Keyword:</label>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxEXPAND|wxLEFT</flag>
+							<border>5</border>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="sizeritem">
+									<option>1</option>
+									<flag>wxLEFT|wxRIGHT|wxTOP</flag>
+									<border>5</border>
+									<object class="wxTextCtrl" name="keyword_text2">
+										<value></value>
+										<maxlength>0</maxlength>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxLEFT|wxRIGHT|wxTOP</flag>
+									<border>5</border>
+									<object class="wxButton" name="go_button2">
+										<label>Go!</label>
+										<default>0</default>
+									</object>
+								</object>
+								<object class="spacer">
+									<option>1</option>
+									<flag>wxEXPAND</flag>
+									<border>5</border>
+									<size>0,0</size>
+								</object>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxEXPAND</flag>
+							<border>5</border>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="sizeritem">
+									<option>1</option>
+									<flag>wxALL|wxEXPAND</flag>
+									<border>10</border>
+									<object class="wxStaticText" name="results_static2">
+										<font>
+											<family>default</family>
+											<style>normal</style>
+											<weight>bold</weight>
+											<underlined>0</underlined>
+										</font>
+										<label>Results:</label>
+									</object>
+								</object>
+								<object class="spacer">
+									<option>3</option>
+									<flag>wxEXPAND</flag>
+									<border>5</border>
+									<size>0,0</size>
+								</object>
+								<object class="sizeritem">
+									<option>2</option>
+									<flag>wxLEFT|wxRIGHT|wxTOP</flag>
+									<border>10</border>
+									<object class="wxStaticText" name="m_staticText142">
+										<font>
+											<family>default</family>
+											<style>normal</style>
+											<weight>bold</weight>
+											<underlined>0</underlined>
+										</font>
+										<label>Add Note:</label>
+									</object>
+								</object>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>18</option>
+							<flag>wxBOTTOM|wxEXPAND|wxLEFT|wxRIGHT|wxTOP</flag>
+							<border>5</border>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="sizeritem">
+									<option>6</option>
+									<flag>wxBOTTOM|wxEXPAND|wxLEFT|wxRIGHT</flag>
+									<border>10</border>
+									<object class="wxTextCtrl" name="results_text2">
+										<style>wxTE_MULTILINE</style>
+										<value></value>
+										<maxlength>0</maxlength>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>3</option>
+									<flag>wxBOTTOM|wxEXPAND|wxLEFT|wxRIGHT</flag>
+									<border>10</border>
+									<object class="wxTextCtrl" name="m_textCtrl142">
+										<style>wxTE_MULTILINE</style>
+										<value></value>
+										<maxlength>0</maxlength>
+									</object>
+								</object>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>3</option>
+							<flag>wxEXPAND|wxLEFT|wxRIGHT</flag>
+							<border>5</border>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="spacer">
+									<option>1</option>
+									<flag>wxEXPAND</flag>
+									<border>5</border>
+									<size>0,0</size>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxRIGHT</flag>
+									<border>9</border>
+									<object class="wxButton" name="m_button72">
+										<label>Add</label>
+										<default>0</default>
+									</object>
+								</object>
+							</object>
+						</object>
+						<object class="spacer">
+							<option>1</option>
+							<flag>wxEXPAND</flag>
+							<border>5</border>
+							<size>0,0</size>
+						</object>
+					</object>
+				</object>
+			</object>
+			<object class="notebookpage">
+				<label>Notes</label>
+				<selected>0</selected>
+				<object class="wxPanel" name="notes_tab">
+					<style>wxTAB_TRAVERSAL</style>
+					<object class="wxBoxSizer">
+						<orient>wxVERTICAL</orient>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>10</border>
+							<object class="wxStaticText" name="notes_static">
+								<font>
+									<family>default</family>
+									<style>normal</style>
+									<weight>bold</weight>
+									<underlined>0</underlined>
+								</font>
+								<label>Added Notes:</label>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>4</option>
+							<flag>wxALL|wxEXPAND</flag>
+							<border>5</border>
+							<object class="wxTextCtrl" name="notes_text">
+								<style>wxTE_MULTILINE|wxTE_RICH2|wxTE_WORDWRAP</style>
+								<value></value>
+								<maxlength>0</maxlength>
+							</object>
+						</object>
+						<object class="spacer">
+							<option>1</option>
+							<flag>wxEXPAND</flag>
+							<border>5</border>
+							<size>0,0</size>
+						</object>
+					</object>
+				</object>
+			</object>
+		</object>
+		<object class="wxToolBar" name="the_toolbar">
+			<style>wxTB_HORIZONTAL</style>
+			<bitmapsize></bitmapsize>
+			<margins></margins>
+			<packing>1</packing>
+			<separation>5</separation>
+			<object class="separator" />
+			<object class="tool" name="save_tool">
+				<label>tool</label>
+				<tooltip></tooltip>
+				<longhelp>Save All Notes</longhelp>
+				<bitmap>crystal_ pro/24x24/actions/save_all.png</bitmap>
+			</object>
+			<object class="separator" />
+			<object class="tool" name="exit_tool">
+				<label>tool</label>
+				<tooltip></tooltip>
+				<longhelp>Exit</longhelp>
+				<bitmap>crystal_ pro/24x24/actions/exit.png</bitmap>
+			</object>
+		</object>
+	</object>
+</resource>
