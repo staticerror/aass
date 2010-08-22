@@ -5,7 +5,7 @@ from random import randrange
 import mechanize, cookielib
 import html2text
 from tidylib import tidy_document
-
+from time import strftime, localtime
 
 
 def encodeToAscii(text, ls = True):
@@ -162,6 +162,17 @@ def uniquer(seq, idfun=None):
         seen[marker] = 1
         result.append(item)
     return result
+
+
+
+
+
+
+#Time utils
+
+def getTime():
+	return strftime("%d %b %Y %I:%M %p", localtime())
+
 
 #ls = ["a", "a", "b"]
 #print uniquer(ls)

@@ -59,16 +59,29 @@ class Dashboard(SiteScraper):
 class ABase(SiteScraper):
 	
 	def makeSearchLink(self, url):
-			
-			htmlpage = getHtml(url)
-			links =  getAllLinks(htmlpage)
-			links = filter(isHtmlLink, links)
-			link = randElement(links)
-			return link
+		htmlpage = getHtml(url)
+		links =  getAllLinks(htmlpage)
+		links = filter(isHtmlLink, links)
+		link = randElement(links)
+		return link
 
 	def fetchArticle(self, keyword):
 	        self.keyword = str(keyword.replace(' ', "+"))
 		url = "http://www.articlesbase.com/find-articles.php?q=" + self.keyword
 		self.makeArticle(url,  'div' , {'class':'article_cnt KonaBody'})
 		
+
+
+class Wiki(SiteScraper):
+
+	def fetch(self, keyword):
+		html = getHtml("http://en.wikipedia.org/wiki/" + keyword)
+		result = parseAll(html,'p')
+		return result
+
+
+
+
+
+
 
